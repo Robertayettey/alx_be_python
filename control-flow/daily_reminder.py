@@ -8,8 +8,15 @@ time_bound = input("Is it time-bound? (yes/no): ")
 # Convert priority to lowercase for case-insensitive matching
 priority = priority.lower()
 
-# Initialize reminder message
-reminder = f"'{task}' is a {priority} priority task"
+# Use a Match Case statement for priority
+if priority == 'high':
+    reminder = f"'{task}' is a high priority task"
+elif priority == 'medium':
+    reminder = f"'{task}' is a medium priority task"
+elif priority == 'low':
+    reminder = f"'{task}' is a low priority task"
+else:
+    reminder = f"'{task}' has an unrecognized priority"
 
 # Check if the task is time-bound
 if time_bound.lower() == 'yes':

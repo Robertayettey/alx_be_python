@@ -1,29 +1,33 @@
-# daily_reminder.py
+def main():
+    # Prompt for task description
+    task = input("Enter your task: ")
 
-# Prompt the user for task details
-task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ")
-time_bound = input("Is it time-bound? (yes/no): ")
+    # Prompt for task's priority
+    priority = input("Priority (high/medium/low): ").lower()
 
-# Convert priority to lowercase for case-insensitive matching
-priority = priority.lower()
+    # Ask if the task is time-bound
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Use a Match Case statement for priority
-if priority == 'high':
-    reminder = f"'{task}' is a high priority task"
-elif priority == 'medium':
-    reminder = f"'{task}' is a medium priority task"
-elif priority == 'low':
-    reminder = f"'{task}' is a low priority task"
-else:
-    reminder = f"'{task}' has an unrecognized priority"
+    # Process the task based on priority and time sensitivity
+    match priority:
+        case 'high':
+            reminder = f"'{task}' is a high priority task"
+        case 'medium':
+            reminder = f"'{task}' is a medium priority task"
+        case 'low':
+            reminder = f"'{task}' is a low priority task"
+        case _:
+            reminder = f"'{task}' has an undefined priority level"
+    
+    # Modify the reminder if the task is time-bound
+    if time_bound == 'yes':
+        reminder += " that requires immediate attention today!"
+    else:
+        reminder += ". Consider completing it when you have free time."
+    
+    # Provide a customized reminder
+    print("Reminder:", reminder)
 
-# Check if the task is time-bound
-if time_bound.lower() == 'yes':
-    reminder += " that requires immediate attention today!"
-else:
-    reminder += ". Consider completing it when you have free time."
-
-# Print the customized reminder
-print("Reminder:", reminder)
+if __name__ == "__main__":
+    main()
 

@@ -1,4 +1,4 @@
-# main.py
+# fns_and_dsa/main.py
 
 from arithmetic_operations import perform_operation
 
@@ -13,4 +13,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
